@@ -19,7 +19,7 @@ use dominus77\noty\themes\SunsetAsset;
  * Class Noty
  * @package dominus77\noty
  */
-class Noty extends Widget
+class NotyWidget extends Widget
 {
     /**
      * Themes

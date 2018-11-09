@@ -29,17 +29,26 @@ Once the extension is installed, simply use it in your layout file like this:
 
 Controller:
 ```php
-Yii::$app->session->setFlash(\dominus77\noty\Noty::TYPE_SUCCESS, 'Hello Word!');
+<?php
+//...
+class SiteController extends Controller 
+{
+    public function actionIndex()
+    {
+        Yii::$app->session->setFlash(\dominus77\noty\NotyWidget::TYPE_SUCCESS, 'Hello Word!');
+        return $this->refresh();
+    }
+}
 
 ```
 
 View:
 ```php
 <?php
-use dominus77\noty\Noty;
+use dominus77\noty\NotyWidget;
 ?>
 
-<?= Noty::widget([
+<?= NotyWidget::widget([
     'typeOptions' => [
         'success' => ['timeout' => 3000],
         'info' => ['timeout' => 3000],

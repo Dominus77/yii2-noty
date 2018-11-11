@@ -16,7 +16,7 @@ php composer.phar require dominus77/yii2-noty
 or add
 
 ```
-"dominus77/yii2-noty": "~1.0"
+"dominus77/yii2-noty": "^1.0"
 ```
 
 to the require section of your `composer.json` file.

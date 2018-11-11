@@ -27,20 +27,6 @@ Usage
 
 Once the extension is installed, simply use it in your layout file like this:
 
-Controller:
-```php
-<?php
-//...
-class SiteController extends Controller 
-{
-    public function actionIndex()
-    {
-        Yii::$app->session->setFlash(\dominus77\noty\NotyWidget::TYPE_SUCCESS, 'Hello Word!');
-        return $this->refresh();
-    }
-}
-
-```
 
 View:
 ```php
@@ -58,7 +44,12 @@ use dominus77\noty\NotyWidget;
         'timeout' => false,
         'layout' => 'topCenter',
         'dismissQueue' => true,
-        'theme' => 'relax'
+        'theme' => NotyWidget::THEME_SUNSET
     ],
 ]) ?>
 ```
+## More Information
+Please, check the [Noty](https://ned.im/noty/#/about)
+
+## License
+The BSD License (BSD). Please see [License File](https://github.com/Dominus77/yii2-noty/blob/master/LICENSE.md) for more information.

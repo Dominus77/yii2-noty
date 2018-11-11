@@ -10,7 +10,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require dominus77e/yii2-noty
+php composer.phar require dominus77/yii2-noty
 ```
 
 or add

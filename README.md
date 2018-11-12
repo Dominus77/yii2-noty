@@ -52,4 +52,4 @@ use dominus77\noty\NotyWidget;
 Please, check the [Noty](https://ned.im/noty/#/about)
 
 ## License
-The BSD License (BSD). Please see [License File](https://github.com/Dominus77/yii2-noty/blob/master/LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/Dominus77/yii2-noty/blob/master/LICENSE.md) for more information.

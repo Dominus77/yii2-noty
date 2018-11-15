@@ -27,6 +27,14 @@ Usage
 
 Once the extension is installed, simply use it in your layout file like this:
 
+Controller:
+```php
+<?php
+// ...
+Yii::$app->session->setFlash(\dominus77\noty\NotyWidget::TYPE_SUCCESS, 'Hello World!');
+// ...
+
+```
 
 View:
 ```php

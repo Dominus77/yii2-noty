@@ -5,15 +5,6 @@ namespace dominus77\noty;
 use Yii;
 use yii\base\Widget;
 use yii\helpers\Json;
-use dominus77\noty\themes\Bootstrap3Asset;
-use dominus77\noty\themes\Bootstrap4Asset;
-use dominus77\noty\themes\LightAsset;
-use dominus77\noty\themes\MetrouiAsset;
-use dominus77\noty\themes\MintAsset;
-use dominus77\noty\themes\NestAsset;
-use dominus77\noty\themes\RelaxAsset;
-use dominus77\noty\themes\SemanticuiAsset;
-use dominus77\noty\themes\SunsetAsset;
 
 /**
  * Class Noty
@@ -83,9 +74,6 @@ class NotyWidget extends Widget
         parent::init();
         $this->_view = $this->getView();
         NotyAsset::register($this->_view);
-        if (isset($this->options['theme']) && !empty($this->options['theme'])) {
-            $this->registerTheme();
-        }
     }
 
     /**
@@ -110,45 +98,6 @@ class NotyWidget extends Widget
                 $this->_view->registerJs("new Noty($optionsEncoded).show();");
             }
             $session->removeFlash($type);
-        }
-    }
-
-    /**
-     * Register themes
-     */
-    protected function registerTheme()
-    {
-        $theme = $this->options['theme'];
-        switch ($theme) {
-            case self::THEME_BOOTSTRAP_3:
-                Bootstrap3Asset::register($this->_view);
-                break;
-            case self::THEME_BOOTSTRAP_4:
-                Bootstrap4Asset::register($this->_view);
-                break;
-            case self::THEME_LIGHT:
-                LightAsset::register($this->_view);
-                break;
-            case self::THEME_METROUI:
-                MetrouiAsset::register($this->_view);
-                break;
-            case self::THEME_MINT:
-                MintAsset::register($this->_view);
-                break;
-            case self::THEME_NEST:
-                NestAsset::register($this->_view);
-                break;
-            case self::THEME_RELAX:
-                RelaxAsset::register($this->_view);
-                break;
-            case self::THEME_SEMANTICUI:
-                SemanticuiAsset::register($this->_view);
-                break;
-            case self::THEME_SUNSET:
-                SunsetAsset::register($this->_view);
-                break;
-            default:
-                RelaxAsset::register($this->_view);
         }
     }
 }

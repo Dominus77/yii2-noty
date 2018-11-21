@@ -59,5 +59,10 @@ use dominus77\noty\NotyWidget;
 ## More Information
 Please, check the [Noty](https://ned.im/noty/#/about)
 
+## Testing
+```
+$ phpunit
+```
+
 ## License
 The MIT License (MIT). Please see [License File](https://github.com/Dominus77/yii2-noty/blob/master/LICENSE.md) for more information.

@@ -3,6 +3,8 @@
 [![Latest Version](https://poser.pugx.org/dominus77/yii2-noty/v/stable)](https://packagist.org/packages/dominus77/yii2-noty)
 [![Software License](https://poser.pugx.org/dominus77/yii2-noty/license)](https://github.com/Dominus77/yii2-noty/blob/master/LICENSE.md)
 [![Build Status](https://travis-ci.org/Dominus77/yii2-noty.svg?branch=master)](https://travis-ci.org/Dominus77/yii2-noty)
+[![codecov](https://codecov.io/gh/Dominus77/yii2-noty/branch/master/graph/badge.svg)](https://codecov.io/gh/Dominus77/yii2-noty)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Dominus77/yii2-noty/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Dominus77/yii2-noty/?branch=master)
 [![SymfonyInsight](https://insight.symfony.com/projects/056b7d4e-da1d-42bd-9f18-9381ffa7ad85/mini.svg)](https://insight.symfony.com/projects/056b7d4e-da1d-42bd-9f18-9381ffa7ad85)
 
 Noty widget for Yii2

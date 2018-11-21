@@ -1,9 +1,10 @@
-Simple notification widget for Yii2
-=================================
+# Simple notification widget for Yii2
+
+[![SymfonyInsight](https://insight.symfony.com/projects/056b7d4e-da1d-42bd-9f18-9381ffa7ad85/mini.svg)](https://insight.symfony.com/projects/056b7d4e-da1d-42bd-9f18-9381ffa7ad85)
+
 Noty widget for Yii2
 
-Installation
-------------
+## Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
@@ -22,8 +23,7 @@ or add
 to the require section of your `composer.json` file.
 
 
-Usage
------
+## Usage
 
 Once the extension is installed, simply use it in your layout file like this:
 
@@ -66,3 +66,6 @@ $ phpunit
 
 ## License
 The MIT License (MIT). Please see [License File](https://github.com/Dominus77/yii2-noty/blob/master/LICENSE.md) for more information.
+
+## SymfonyInsight
+[![SymfonyInsight](https://insight.symfony.com/projects/056b7d4e-da1d-42bd-9f18-9381ffa7ad85/big.svg)](https://insight.symfony.com/projects/056b7d4e-da1d-42bd-9f18-9381ffa7ad85)

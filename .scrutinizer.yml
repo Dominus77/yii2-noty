@@ -25,7 +25,7 @@ tools:
         config:
             standard: PSR2
         filter:
-            paths: ['src/NotyAsset', 'src/NotyWidget']
+            paths: ['src/NotyAsset.php', 'src/NotyWidget.php']
     php_loc:
         enabled: true
         excluded_dirs: [vendor, tests]

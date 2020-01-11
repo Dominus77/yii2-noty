@@ -86,7 +86,7 @@ Please, check the [Noty](https://ned.im/noty/#/about)
 
 ## Testing
 ```
-$ phpunit
+$ vendor/bin/phpunit
 ```
 
 ## License

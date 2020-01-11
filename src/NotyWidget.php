@@ -65,7 +65,13 @@ class NotyWidget extends Widget
     /**
      * @var array
      */
-    public $typeOptions = [];
+    public $typeOptions = [
+        self::TYPE_SUCCESS => [],
+        self::TYPE_INFO => [],
+        self::TYPE_ALERT => [],
+        self::TYPE_ERROR => [],
+        self::TYPE_WARNING => []
+    ];
 
     /**
      * @var array

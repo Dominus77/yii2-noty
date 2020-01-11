@@ -36,6 +36,21 @@ class NotyWidget extends Widget
     const TYPE_INFO = 'info';
 
     /**
+     * Layouts
+     */
+    const LAYOUT_TOP = 'top';
+    const LAYOUT_TOP_LEFT = 'topLeft';
+    const LAYOUT_TOP_CENTER = 'topCenter';
+    const LAYOUT_TOP_RIGHT = 'topRight';
+    const LAYOUT_CENTER = 'center';
+    const LAYOUT_CENTER_LEFT = 'centerLeft';
+    const LAYOUT_CENTER_RIGHT = 'centerRight';
+    const LAYOUT_BOTTOM = 'bottom';
+    const LAYOUT_BOTTOM_LEFT = 'bottomLeft';
+    const LAYOUT_BOTTOM_CENTER = 'bottomCenter';
+    const LAYOUT_BOTTOM_RIGHT = 'bottomRight';
+
+    /**
      * @var array
      */
     private $typeMap = [
@@ -58,7 +73,7 @@ class NotyWidget extends Widget
     public $options = [
         'progressBar' => true,
         'timeout' => false,
-        'layout' => 'topRight',
+        'layout' => self::LAYOUT_TOP_RIGHT,
         'dismissQueue' => true,
         'theme' => self::THEME_RELAX,
     ];
@@ -84,24 +99,60 @@ class NotyWidget extends Widget
         $session = Yii::$app->session;
         $flashes = $session->getAllFlashes();
 
-        foreach ($flashes as $type => $flash) {
-            if (!isset($this->typeMap[$type])) {
-                continue;
-            }
-            $typeAlert = $this->typeMap[$type];
-            $options = array_merge($this->options, $this->typeOptions[$typeAlert] ?? []);
 
-            foreach ((array)$flash as $i => $message) {
+        foreach ($flashes as $key => $item) {
+            if (is_array($item)) {
+
+                if (!isset($this->typeMap[$item[0]])) {
+                    continue;
+                }
+
+                $typeAlert = $this->typeMap[$item[0]];
+                $typeOptions = $this->typeOptions[$typeAlert];
+                $oldOptions = $this->options;
+
+                if (isset($item[2])) {
+                    $this->typeOptions[$typeAlert] = array_merge($typeOptions, $item[2] ?? []);
+                }
+
+                if (isset($item[3])) {
+                    $this->options = array_merge($oldOptions, $item[3] ?? []);
+                }
+
+                $options = array_merge($this->options, $this->typeOptions[$typeAlert] ?? []);
+
                 $options['type'] = $typeAlert;
-                $options['text'] = $message;
-                $optionsEncoded = Json::encode($options);
-                //$this->_view->registerJs("new Noty($optionsEncoded).show();");
-                $this->_view->registerJs("
-                    var n{$i} = new Noty($optionsEncoded);
-                    n{$i}.show();
-                ");
+                $options['text'] = $item[1];
+
+                $this->register($options);
+                $this->typeOptions[$typeAlert] = $typeOptions;
+                $this->options = $oldOptions;
+            } else {
+
+                if (!isset($this->typeMap[$key])) {
+                    continue;
+                }
+
+                $typeAlert = $this->typeMap[$key];
+                $options = array_merge($this->options, $this->typeOptions[$typeAlert] ?? []);
+
+                foreach ((array)$item as $i => $message) {
+                    $options['type'] = $typeAlert;
+                    $options['text'] = $message;
+
+                    $this->register($options);
+                }
             }
-            $session->removeFlash($type);
+            $session->removeFlash($key);
         }
+    }
+
+    /**
+     * @param array $options
+     */
+    public function register($options = [])
+    {
+        $optionsEncoded = Json::encode($options);
+        $this->_view->registerJs("new Noty($optionsEncoded).show();");
     }
 }

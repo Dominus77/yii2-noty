@@ -67,7 +67,7 @@ View:
 use dominus77\noty\NotyWidget;
 ?>
 
-<?= NotyWidget::widget([
+<?php NotyWidget::widget([
     'typeOptions' => [
         NotyWidget::TYPE_SUCCESS => ['timeout' => 3000],
         NotyWidget::TYPE_INFO => ['timeout' => 3000],

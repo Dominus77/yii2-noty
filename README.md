@@ -41,7 +41,8 @@ Yii::$app->session->setFlash(\dominus77\noty\NotyWidget::TYPE_SUCCESS, 'Hello Wo
 
 ```
 also
-```
+```php
+<?php
 // ...
 Yii::$app->session->setFlash('key1', [
     \dominus77\noty\NotyWidget::TYPE_SUCCESS,

@@ -7,7 +7,7 @@ use yii\base\Widget;
 use yii\helpers\Json;
 
 /**
- * Class Noty
+ * Class NotyWidget
  * @package dominus77\noty
  */
 class NotyWidget extends Widget

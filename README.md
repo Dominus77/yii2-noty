@@ -40,6 +40,25 @@ Yii::$app->session->setFlash(\dominus77\noty\NotyWidget::TYPE_SUCCESS, 'Hello Wo
 // ...
 
 ```
+also
+```
+// ...
+Yii::$app->session->setFlash('key1', [
+    \dominus77\noty\NotyWidget::TYPE_SUCCESS,
+    'Hello World!', 
+    // Type options
+    [
+        'timeout' => 3000
+    ],
+    // Options
+    [
+        'progressBar' => true,
+        'layout' => \dominus77\noty\NotyWidget::LAYOUT_TOP_RIGHT,
+        'theme' => \dominus77\noty\NotyWidget::THEME_MINT
+    ]
+]);
+// ...
+```
 
 View:
 ```php
@@ -60,24 +79,6 @@ use dominus77\noty\NotyWidget;
         'theme' => NotyWidget::THEME_SUNSET
     ],
 ]) ?>
-```
-
-Passing parameters from the controller
-```
-Yii::$app->session->setFlash('key1', [
-    \dominus77\noty\NotyWidget::TYPE_SUCCESS,
-    'Hello World!', 
-    // Type options
-    [
-        'timeout' => 3000
-    ],
-    // Options
-    [
-        'progressBar' => true,
-        'layout' => \dominus77\noty\NotyWidget::LAYOUT_TOP_RIGHT,
-        'theme' => \dominus77\noty\NotyWidget::THEME_MINT
-    ]
-]);
 ```
 
 ## More Information

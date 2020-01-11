@@ -82,7 +82,7 @@ use dominus77\noty\NotyWidget;
         'dismissQueue' => true,
         'theme' => NotyWidget::THEME_SUNSET
     ],
-]) ?>
+]); ?>
 ```
 
 ## More Information

@@ -69,8 +69,11 @@ use dominus77\noty\NotyWidget;
 
 <?= NotyWidget::widget([
     'typeOptions' => [
-        'success' => ['timeout' => 3000],
-        'info' => ['timeout' => 3000],
+        NotyWidget::TYPE_SUCCESS => ['timeout' => 3000],
+        NotyWidget::TYPE_INFO => ['timeout' => 3000],
+        NotyWidget::TYPE_ALERT => ['timeout' => 3000],
+        NotyWidget::TYPE_ERROR => ['timeout' => 5000],
+        NotyWidget::TYPE_WARNING => ['timeout' => 3000]
     ],
     'options' => [
         'progressBar' => true,

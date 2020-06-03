@@ -114,7 +114,7 @@ class NotyWidget extends Widget
                 }
 
                 $typeAlert = $this->typeMap[$item[0]];
-                $typeOptions = $this->typeOptions[$typeAlert];
+                $typeOptions = $this->typeOptions[$typeAlert] ?? [];
                 $oldOptions = $this->options;
 
                 if (isset($item[2])) {

@@ -13,19 +13,12 @@ class NotyAsset extends AssetBundle
     /**
      * @var string
      */
-    public $sourcePath = '@vendor/needim/noty/lib';
+    public $sourcePath = '@bower/noty/lib';
 
-    /**
-     * @var array
-     */
-    public $js = [
-        'noty.js'
-    ];
-
-    /**
-     * @var array
-     */
-    public $css = [
-        'noty.css',
-    ];
+    public function init()
+    {
+        $min = YII_ENV_DEV ? '' : '.min';
+        $this->css[] = 'noty.css';
+        $this->js[] = 'noty' . $min . '.js';
+    }
 }

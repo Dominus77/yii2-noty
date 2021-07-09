@@ -23,6 +23,6 @@ class NotyAssetTest extends TestCase
         $this->assertTrue($view->assetBundles['dominus77\\noty\\NotyAsset'] instanceof AssetBundle);
         $content = $view->renderFile('@tests/views/layouts/rawlayout.php');
         $this->assertContains('noty.css', $content);
-        $this->assertContains('noty.js', $content);
+        $this->assertContains('noty.min.js', $content);
     }
 }
